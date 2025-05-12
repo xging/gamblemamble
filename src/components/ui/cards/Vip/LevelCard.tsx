@@ -1,0 +1,55 @@
+import React, { useMemo } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "../Cards.style.scss";
+import { LevelCardContent } from "./LevelCardContent";
+import { getShuffledColorClasses } from "../../../../utils/shuffleColors";
+import type { LevelCardProps } from "../../../../types/VipCard.types";
+
+export const LevelCard: React.FC<LevelCardProps> = ({ dataList }) => {
+  const bgColors = useMemo(() => getShuffledColorClasses("bg-color"), []);
+
+  return (
+    <Swiper
+      slidesPerView="auto"
+      centeredSlides
+      spaceBetween={30}
+      className="mySwiper"
+    >
+      {dataList.map(
+        (
+          {
+            title,
+            level,
+            currentSP,
+            maxSP,
+            rewardSP,
+            rewardFS,
+            isLocked,
+            lvlBadgeImg,
+          },
+          idx
+        ) => {
+          const badge = lvlBadgeImg?.[0];
+          const bgColor = bgColors[idx % bgColors.length];
+
+          return (
+            <SwiperSlide key={`${title}-${level}-${idx}`}>
+              <LevelCardContent
+                title={title}
+                level={level}
+                currentSP={currentSP}
+                maxSP={maxSP}
+                rewardSP={rewardSP}
+                rewardFS={rewardFS}
+                isLocked={isLocked}
+                lvlBadgeImg={badge}
+                bgColorClass={bgColor}
+              />
+            </SwiperSlide>
+          );
+        }
+      )}
+    </Swiper>
+  );
+};

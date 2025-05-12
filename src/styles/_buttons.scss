@@ -1,0 +1,87 @@
+@use "./mixins";
+
+//Glared button
+@include mixins.glared-button("purple", #902bff, rgb(144, 43, 255), 0.1);
+@include mixins.glared-button("green", #ffffff, rgb(98, 167, 66), 0.9);
+@include mixins.glared-button("white", #ffffff, rgb(255, 255, 255), 0.1);
+
+//Framed button
+@include mixins.framed-button(
+  $name: "dark-purple",
+  $bg-color: #902bff,
+  $inner-bg: #902bff,
+  $border-inner: none,
+  $left-wing: "Left_wing_dark.png",
+  $right-wing: "Right_wing_dark.png"
+);
+
+@include mixins.framed-button(
+  $name: "light-purple",
+  $bg-color: #902bff,
+  $inner-bg: #902bff,
+  $border-inner: 0.0625rem solid #c38bff,
+  $left-wing: "Left_wing_light.png",
+  $right-wing: "Right_wing_light.png"
+);
+
+.framed-button__inner {
+  background-color: #902bff;
+  transition: background-color 0.3s ease;
+}
+
+.framed-button:hover .framed-button__inner {
+  background-color: #6500d1;
+}
+
+.framed-button-icons-wrapper {
+  @apply flex flex-col items-center;
+  width: 4.125rem; // 66px
+  scroll-snap-align: start;
+}
+
+.framed-button-icons {
+  @apply flex items-center justify-center;
+  width: 2.1875rem; // 35px
+  height: 2rem; // 32px
+
+  &__icon {
+    @apply flex items-center justify-center rounded-xl relative;
+    width: 2.1875rem;
+    height: 2rem;
+    background-color: #902aff;
+
+    &::before,
+    &::after {
+      content: "";
+      @apply block absolute;
+      top: -0.0625rem; // -1px
+      width: 0.875rem; // 14px
+      height: 2.125rem; // 34px
+      background-repeat: no-repeat;
+      background-size: contain;
+      z-index: 30;
+    }
+
+    &::before {
+      left: -0.125rem; // -2px
+      background-image: url("@/assets/wings/Left_wing_dark.png");
+    }
+
+    &::after {
+      right: -0.125rem;
+      background-image: url("@/assets/wings/Right_wing_dark.png");
+    }
+
+    svg,
+    img {
+      @apply w-4 h-4;
+    }
+  }
+
+  &__label {
+    @apply font-lato text-center font-black text-base leading-none;
+    color: #323454;
+    margin-top: 0.25rem; // 4px
+    width: 4.125rem; // 66px
+  }
+}

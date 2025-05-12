@@ -1,0 +1,34 @@
+.footer {
+  @apply text-center p-4 text-white fixed bottom-0 left-1/2 w-full;
+
+  // 🔸 Non-Tailwind custom style
+  height: 64px;
+  max-width: 475px;
+  min-width: 375px;
+  background: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px 10px 0px 0px;
+  color: red;
+  z-index: 999;
+
+  transform: translateX(-50%);
+
+  &__container {
+    @apply flex;
+  }
+  &__section {
+    @apply flex-auto;
+  }
+
+  &__section:last-child .glared-button {
+    @apply float-right;
+  }
+
+  &__section--center {
+    @apply flex justify-center items-center;
+  }
+
+  &__section--center .framed-button {
+    @apply relative bottom-6;
+  }
+}

@@ -1,0 +1,47 @@
+.jackpot-card {
+  @apply flex items-center max-w-md mx-auto;
+  width: 22.1875rem; // 355px
+  height: 6.25rem; // 100px
+  background: #ffffff;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15); // 4px 8px
+  border-radius: 1.125rem; // 18px
+  overflow: visible;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+
+  &__info {
+    @apply bg-white;
+    padding: 0.76rem; // ≈12.16px
+    border-radius: 1.125rem; // 18px
+
+    &-label {
+      @apply font-robotoCondensed uppercase text-[1.375rem] leading-none font-black; // 22px
+      font-style: normal;
+      color: #323454;
+    }
+
+    &-amount {
+      @apply font-robotoCondensed tracking-wide mt-1 text-[2.875rem] leading-none font-black uppercase; // 46px
+      font-style: normal;
+      color: #902aff;
+    }
+  }
+
+  &__icon {
+    @apply relative flex justify-center items-start;
+    width: 9.125rem; // 146px
+    height: 6.25rem; // 100px
+    background: linear-gradient(180deg, #ffe386 0%, #fff9c7 100%);
+    border-radius: 1.125rem; // 18px
+    // overflow: hidden;
+
+    img {
+      @apply object-contain;
+      position: absolute;
+      width: 7.6875rem; // 123px
+      height: 8.1875rem; // 131px
+      top: -0.625rem; // -10px
+      transform: scaleX(-1);
+    }
+  }
+}

@@ -1,0 +1,48 @@
+.framed-searchbox {
+  @apply inline-block;
+  height: 3.125rem; // 50px
+  padding: 0 0.625rem; // 10px
+  border-radius: 0.75rem; // 12px
+
+  &__inner {
+    @apply flex items-center bg-white gap-2 relative;
+    padding: 0.8125rem 0.75rem; // 13px 12px
+    border-radius: 0.625rem; // 10px
+
+    &::before,
+    &::after {
+      content: "";
+      @apply block absolute;
+      width: 1.3125rem; // 21px
+      height: 3.25rem; // 52px
+      background-repeat: no-repeat;
+      background-size: contain;
+      z-index: 30;
+    }
+
+    &::before {
+      left: -0.0625rem; // -1px
+      background-image: url("@/assets/wings/Left_wing_semilight.png");
+    }
+
+    &::after {
+      right: -0.3125rem; // -5px
+      background-image: url("@/assets/wings/Right_wing_semilight.png");
+    }
+  }
+
+  &__icon {
+    @apply text-gray-800;
+  }
+
+  &__input {
+    @apply font-roboto font-medium leading-none bg-transparent outline-none border-none;
+    font-size: 1.125rem; // 18px
+    color: #232c49;
+
+    &::placeholder {
+      @apply opacity-100;
+      color: #232c49;
+    }
+  }
+}

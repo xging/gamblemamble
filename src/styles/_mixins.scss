@@ -1,0 +1,141 @@
+//Glared button
+@mixin glared-button($name, $text-color, $main-color, $bg-opacity: 0.1) {
+  .glared-button {
+    @apply font-robotoCondensed flex items-center justify-center font-extrabold text-sm leading-none uppercase bg-cover bg-center w-[7.75rem] h-[2.375rem] rounded-[0.625rem] text-[0.875rem] leading-[1];
+
+    &--#{$name} {
+      color: $text-color;
+      background-color: rgba($main-color, $bg-opacity);
+      border: 0.1875rem solid $main-color;
+      background-image: linear-gradient(
+          rgba($main-color, $bg-opacity),
+          rgba($main-color, $bg-opacity)
+        ),
+        url("@/assets/Blink.png");
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0 0 0 rgba($main-color, 0);
+
+      &:hover {
+        background-color: rgba($main-color, 0.2);
+        background-blend-mode: lighten;
+        box-shadow: 0 0 5px 2px rgba($main-color, 0.6);
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
+//Framed button
+@mixin framed-button(
+  $name,
+  $bg-color,
+  $inner-bg,
+  $border-inner,
+  $height: 2.8125rem,
+  $border-radius: 0.75rem,
+  $left-wing,
+  $right-wing
+) {
+  .framed-button {
+    @apply font-robotoCondensed flex relative px-4 items-center justify-center focus:outline-none;
+    height: $height;
+
+    &__inner {
+      @apply absolute inset-0 z-0;
+      border-radius: $border-radius;
+      border: #{$border-inner};
+    }
+
+    &__text {
+      @apply relative z-20 text-white font-semibold text-sm;
+    }
+
+    &__burger {
+      @apply relative z-20 flex flex-col justify-between h-[1.25rem];
+
+      &-line {
+        @apply bg-white rounded-full w-[1.4375rem] h-[0.1875rem];
+      }
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      @apply block absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 1.3125rem;
+      height: 3.25rem;
+      background-repeat: no-repeat;
+      background-size: contain;
+      z-index: 30;
+    }
+
+    &--#{$name} {
+      .framed-button__inner {
+        background-color: $inner-bg;
+      }
+
+      &::before {
+        left: -0.125rem;
+        background-image: url("@/assets/wings/#{$left-wing}");
+      }
+
+      &::after {
+        right: -0.25rem;
+        background-image: url("@/assets/wings/#{$right-wing}");
+      }
+    }
+  }
+}
+
+//Feature card
+@mixin feature-card(
+  $name,
+  $background-color: null,
+  $title-color: null,
+  $box-shadow: null,
+  $content-height: auto,
+  $title-padding: 0,
+  $button-margin-bottom: 0,
+  $active-slide-margin: 0,
+  $prev-slide-margin: 0,
+  $next-slide-margin: 0,
+  $next-slide-padding: 0,
+  $next-slide-height: auto
+) {
+  .feature-card {
+    &--#{$name} {
+      background-color: $background-color;
+      box-shadow: $box-shadow;
+
+      .feature-card__title {
+        color: $title-color;
+        padding: $title-padding;
+      }
+
+      .feature-card__inner {
+        height: $content-height;
+      }
+
+      .framed-button {
+        margin-bottom: $button-margin-bottom;
+      }
+
+      .swiper-slide {
+        &-active {
+          margin: $active-slide-margin;
+        }
+        &-prev {
+          margin: $prev-slide-margin;
+        }
+        &-next {
+          height: $next-slide-height;
+          margin: $next-slide-margin;
+          padding: $next-slide-padding;
+        }
+      }
+      @content;
+    }
+  }
+}

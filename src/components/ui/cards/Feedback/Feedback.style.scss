@@ -1,0 +1,54 @@
+.feedback-card {
+  @apply bg-white rounded-xl shadow-md p-4 mb-4 relative text-sm font-roboto;
+
+  &__header {
+    @apply flex items-center justify-between mb-2;
+  }
+
+  &__avatar {
+    @apply w-10 h-10 rounded-full mr-3; // 40x40px
+  }
+
+  &__info {
+    @apply flex flex-1 justify-start;
+  }
+
+  &__details {
+    @apply flex flex-col items-start;
+  }
+
+  &__name {
+    @apply font-bold text-[0.875rem]; // 14px
+    letter-spacing: 0;
+    color: #323454;
+  }
+
+  &__username {
+    @apply font-bold text-[0.75rem]; // 12px
+    letter-spacing: 0;
+    color: #71828f;
+  }
+
+  &__logo {
+    @apply text-blue-400 font-bold text-xl leading-none hover:text-blue-600 self-start;
+  }
+
+  &__stars {
+    @apply text-yellow-400 text-base mb-2 flex justify-start;
+  }
+
+  &__text {
+    @apply mb-3 text-left text-[0.75rem]; // 12px
+    font-weight: 400;
+    line-height: 1.25rem; // 20px
+    letter-spacing: 0;
+    color: #323454;
+  }
+
+  &__date {
+    @apply text-right text-[0.75rem]; // 12px
+    font-weight: 400;
+    letter-spacing: 0;
+    color: #71828f;
+  }
+}

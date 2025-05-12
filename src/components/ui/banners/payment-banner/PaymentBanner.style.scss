@@ -1,0 +1,7 @@
+.payment-banner {
+  @apply flex items-center justify-center gap-3 pt-2;
+
+  &__logo {
+    @apply h-12;
+  }
+}

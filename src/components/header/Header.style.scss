@@ -1,0 +1,13 @@
+.header {
+  height: 667px;
+  background-image: url("@/assets/Banner.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top;
+  background-color: #323454;
+
+  &__content {
+    @apply flex flex-col gap-4 relative;
+    top: 20.625rem; //330px;
+  }
+}

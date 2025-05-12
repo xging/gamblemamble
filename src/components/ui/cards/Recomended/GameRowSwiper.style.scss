@@ -1,0 +1,44 @@
+.game-row-swiper {
+  @apply mt-6 flex justify-center items-center h-[22.1875rem]; // 355px
+
+  &__container {
+    // poka pustoj
+  }
+
+  &__slide {
+    // img {
+    //   height: 9.4375rem !important; // 151px
+    // }
+  }
+
+  &__card {
+    @apply w-[6.875rem] h-[10.8125rem] rounded-[0.75rem] overflow-hidden relative text-center;
+    // 110px x 173px → 6.875rem x 10.8125rem
+  }
+
+  &__image {
+    @apply w-full h-full object-cover block;
+    height: 9.4375rem !important; // 151px
+  }
+
+  &__player-count {
+    @apply font-roboto absolute bottom-0 pl-[0.875rem]; // 14px
+    left: 0.625rem; // 10px
+    font-weight: 800;
+    font-size: 0.75rem; // 12px
+    line-height: 100%;
+    letter-spacing: 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0.0625rem; // 1px
+      width: 0.5rem; // 8px
+      height: 0.625rem; // 10px
+      background-image: url("@/assets/Man.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+}

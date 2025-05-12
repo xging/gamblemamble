@@ -1,0 +1,27 @@
+@use "@/styles/mixins";
+@use "@/styles/buttons";
+@use "@/styles/cards";
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply text-gray-800 bg-[#B8B8D1];
+  // height: 5889px;
+  height: auto;
+  background-image: url("@/assets/Pattern.png");
+  background-size: contain;
+  min-width: 375px;
+  touch-action: pan-x pan-y;
+}
+
+.custom-button {
+  @apply px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600;
+}
+
+.custom-text {
+  @apply text-primary;
+}
