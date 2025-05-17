@@ -14,16 +14,16 @@ export const BonusCardsContent: React.FC<BonusContentCardsProps> = ({
   const altText = Img?.alt || title || "Bonus image";
 
   return (
-    <>
+    <div className="bonuscard__card">
       {Img?.src && (
-        <img src={Img.src} alt={altText} className="swiper-slide__img" />
+        <img src={Img.src} alt={altText} className="bonuscard__img" />
       )}
 
-      <div className={`swiper-slide__content ${bgColorClass}`}>
-        <h4 className={`swiper-slide__title ${textColorClass}`}>{title}</h4>
-        <p className="swiper-slide__text">{description}</p>
+      <div className={`bonuscard__content ${bgColorClass}`}>
+        <h4 className={`bonuscard__title ${textColorClass}`}>{title}</h4>
+        <p className="bonuscard__description">{description}</p>
         <GlaredButton text="FIND OUT MORE" color={buttonColor} />
       </div>
-    </>
+    </div>
   );
 };

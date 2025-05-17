@@ -14,7 +14,7 @@
   }
 
   &__inner {
-    @apply mb-5 w-full;
+    @apply w-full; //mb-5
     @apply relative z-10;
   }
 

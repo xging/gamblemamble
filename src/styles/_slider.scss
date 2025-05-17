@@ -1,0 +1,76 @@
+@use "./mixins";
+
+// Recomended
+@include mixins.slider(
+  $name: "recomended",
+  $display: grid,
+  $grid-rows: repeat(2, 1fr),
+  $grid-flow: column,
+  $grid-column-width: 6.875rem,
+  // 110px
+  $column-gap: 0.625rem,
+  // 10px
+  $padding: 1.25rem 0.625rem // 20px 10px
+) {
+}
+
+// Livegames
+@include mixins.slider(
+  $name: "livegames",
+  $display: grid,
+  $grid-rows: repeat(1, 1fr),
+  $grid-flow: column,
+  $grid-column-width: 7.5rem,
+  // 120px
+  $column-gap: 0.625rem,
+  // 10px
+  $padding: 1.875rem 0.625rem // 30px 10px
+) {
+}
+
+// Promotions card
+@include mixins.slider-carousel($name: "promotions", $padding: 2.8125rem 0) {
+  // 45px 0
+  .card {
+    scroll-snap-align: center;
+    position: relative;
+    left: 5rem; // 80px
+    transition: transform 0.3s;
+
+    &.active {
+      transform: scale(1.168);
+      position: relative;
+      left: 5rem; // 80px
+    }
+  }
+
+  .card:last-child {
+    padding-right: 2.3125rem; // 37px
+  }
+}
+
+// Tournament card
+@include mixins.slider(
+  $name: "tournament",
+  $display: grid,
+  $grid-rows: repeat(1, 1fr),
+  $grid-flow: column,
+  $grid-column-width: 15.625rem,
+  // 250px
+  $column-gap: 0.625rem // 10px
+) {
+}
+
+// Vip card
+@include mixins.slider(
+  $name: "vip",
+  $display: grid,
+  $grid-rows: repeat(1, 1fr),
+  $grid-flow: column,
+  $grid-column-width: 15.625rem,
+  // 250px
+  $column-gap: 0.625rem,
+  // 10px
+  $padding: 1.5625rem 0.625rem // 25px 10px
+) {
+}

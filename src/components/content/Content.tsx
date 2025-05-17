@@ -6,7 +6,6 @@ import { BottomCard } from "../ui/cards/Bottom/BottomCard";
 import { getContentCards } from "./cards.config";
 import type { Variant } from "../../types/Content.types";
 import "./Content.style.scss";
-
 export const Content: React.FC = () => {
   const [iceAndFire, setIceAndFire] = useState<Variant>("fire");
 
@@ -15,7 +14,6 @@ export const Content: React.FC = () => {
   return (
     <>
       <IconMenu />
-
       {contentCards.map((card, index) => {
         const { style, title, buttonText, isShowButton, children } = card;
 

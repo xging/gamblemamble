@@ -1,4 +1,3 @@
-import React from "react";
 import {
   generateBonusList,
   generateFeedbackList,
@@ -13,7 +12,7 @@ import {
 
 import { BonusCards } from "../ui/cards/Bonus/BonusCards";
 import { FeedbackCard } from "../ui/cards/Feedback/FeedbackCard";
-import { GameRowSwiper } from "../ui/cards/Recomended/GameRowSwiper";
+import { Recomended } from "../ui/cards/Recomended/Recomended";
 import { LevelCard } from "../ui/cards/Vip/LevelCard";
 import { TabbedCard } from "../ui/cards/TabbedCard/TabbedCard";
 import { SlotsList } from "../ui/cards/TabbedCard/SlotsList/SlotsList";
@@ -53,7 +52,7 @@ export const getContentCards = (
     style: "recomended",
     title: "Recommended for you",
     buttonText: "SHOW MORE",
-    children: <GameRowSwiper dataList={data.games} />,
+    children: <Recomended dataList={data.games} />,
   },
   {
     style: "hotncold",
@@ -80,13 +79,13 @@ export const getContentCards = (
     style: "promotion",
     title: "PROMOTIONS",
     buttonText: "ALL PROMOTIONS",
-    children: <BonusCards dataList={data.promotions} />,
+    children: <BonusCards dataList={data.promotions} cardname="promotions" />,
   },
   {
     style: "tournament",
     title: "TOURNAMENTS",
     buttonText: "ALL TOURNAMENTS",
-    children: <BonusCards dataList={data.tournaments} />,
+    children: <BonusCards dataList={data.tournaments} cardname="tournament" />,
   },
   {
     style: "vip",

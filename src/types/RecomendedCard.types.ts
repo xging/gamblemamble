@@ -12,7 +12,7 @@ export type CardItem = {
     type: CardType;
   };
   
-export type GameRowProps = {
+export type RecomendedProps = {
     dataList: CardItem[];
   };
   

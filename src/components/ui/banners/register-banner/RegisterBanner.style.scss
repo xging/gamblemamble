@@ -16,16 +16,16 @@
   &__title {
     @apply font-robotoCondensed font-black leading-none text-center uppercase text-white;
     font-style: normal;
-    font-size: 26px;
+    font-size: 1.625rem; // 26px
   }
 }
 
 .register-banner .framed-button {
-  width: 252px;
+  width: 15.75rem; // 252px
 }
 
 .register-banner .framed-button__text {
   @apply font-robotoCondensed font-black;
   font-style: normal;
-  font-size: 25px;
+  font-size: 1.5625rem; // 25px
 }

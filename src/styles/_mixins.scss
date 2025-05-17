@@ -1,12 +1,17 @@
-//Glared button
+// Glared button
 @mixin glared-button($name, $text-color, $main-color, $bg-opacity: 0.1) {
   .glared-button {
-    @apply font-robotoCondensed flex items-center justify-center font-extrabold text-sm leading-none uppercase bg-cover bg-center w-[7.75rem] h-[2.375rem] rounded-[0.625rem] text-[0.875rem] leading-[1];
+    @apply font-robotoCondensed flex items-center justify-center font-extrabold text-sm leading-none uppercase bg-cover bg-center;
+    width: 7.75rem; // 124px
+    height: 2.375rem; // 38px
+    border-radius: 0.625rem; // 10px
+    font-size: 0.875rem; // 14px
+    line-height: 1;
 
     &--#{$name} {
       color: $text-color;
       background-color: rgba($main-color, $bg-opacity);
-      border: 0.1875rem solid $main-color;
+      border: 0.1875rem solid $main-color; // 3px
       background-image: linear-gradient(
           rgba($main-color, $bg-opacity),
           rgba($main-color, $bg-opacity)
@@ -18,21 +23,23 @@
       &:hover {
         background-color: rgba($main-color, 0.2);
         background-blend-mode: lighten;
-        box-shadow: 0 0 5px 2px rgba($main-color, 0.6);
+        box-shadow: 0 0 0.3125rem 0.125rem rgba($main-color, 0.6); // 5px 2px
         transform: scale(1.05);
       }
     }
   }
 }
 
-//Framed button
+// Framed button
 @mixin framed-button(
   $name,
   $bg-color,
   $inner-bg,
   $border-inner,
   $height: 2.8125rem,
+  // 45px
   $border-radius: 0.75rem,
+  // 12px
   $left-wing,
   $right-wing
 ) {
@@ -51,10 +58,13 @@
     }
 
     &__burger {
-      @apply relative z-20 flex flex-col justify-between h-[1.25rem];
+      @apply relative z-20 flex flex-col justify-between;
+      height: 1.25rem; // 20px
 
       &-line {
-        @apply bg-white rounded-full w-[1.4375rem] h-[0.1875rem];
+        @apply bg-white rounded-full;
+        width: 1.4375rem; // 23px
+        height: 0.1875rem; // 3px
       }
     }
 
@@ -64,8 +74,8 @@
       @apply block absolute;
       top: 50%;
       transform: translateY(-50%);
-      width: 1.3125rem;
-      height: 3.25rem;
+      width: 1.3125rem; // 21px
+      height: 3.25rem; // 52px
       background-repeat: no-repeat;
       background-size: contain;
       z-index: 30;
@@ -77,19 +87,19 @@
       }
 
       &::before {
-        left: -0.125rem;
+        left: -0.125rem; // -2px
         background-image: url("@/assets/wings/#{$left-wing}");
       }
 
       &::after {
-        right: -0.25rem;
+        right: -0.25rem; // -4px
         background-image: url("@/assets/wings/#{$right-wing}");
       }
     }
   }
 }
 
-//Feature card
+// Feature card
 @mixin feature-card(
   $name,
   $background-color: null,
@@ -137,5 +147,55 @@
       }
       @content;
     }
+  }
+}
+
+// Slider
+@mixin slider(
+  $name,
+  $display: grid,
+  $grid-rows: repeat(2, 1fr),
+  $grid-flow: column,
+  $grid-column-width: 6.875rem,
+  // 110px
+  $column-gap: 0.625rem,
+  // 10px
+  $padding: 1.25rem 0 // 20px 0px
+) {
+  .snap-#{$name} {
+    display: $display;
+    grid-template-rows: $grid-rows;
+    grid-auto-flow: $grid-flow;
+    grid-auto-columns: $grid-column-width;
+    gap: $column-gap;
+    padding: $padding;
+
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    @content;
+  }
+}
+
+// Carousel
+@mixin slider-carousel(
+  $name,
+  $display: flex,
+  $column-gap: 2.1875rem,
+  // 35px
+  $padding: 1.25rem 0 // 20px 0px
+) {
+  .carousel-#{$name} {
+    padding: $padding;
+    gap: $column-gap;
+    display: $display;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+
+    @content;
   }
 }

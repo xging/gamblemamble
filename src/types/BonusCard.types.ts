@@ -14,6 +14,7 @@ export type CardItem = {
   
 export type BonusCardsProps = {
     dataList: CardItem[];
+    cardname: string;
   };
   
 export type BonusContentCardsProps = {

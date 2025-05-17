@@ -1,56 +1,95 @@
-.livegames {
-  @apply w-full h-full;
-  overflow: visible !important;
+// .livegames {
+//   @apply flex justify-center gap-4;
+// }
 
-  .swiper-slide-active {
-    // transform: translate3d(0.9375rem, 0, 0) !important; // 15px
-  }
-
-  .swiper-slide {
-    @apply text-center text-[1.125rem] flex justify-center items-center rounded-[1rem] !important;
-    background: #fff;
-
-    &__indicator {
-      @apply absolute w-2 h-2 rounded-full outline outline-4 outline-white z-10;
-      background: linear-gradient(180deg, #70f256 0%, #418c32 100%);
-      box-shadow: 0 0.25rem 0.375rem rgba(42, 255, 0, 0.35); // 4px 6px
-      top: -0.3125rem; // -5px
-      right: 0.9375rem; // 15px
-    }
-
-    &-active,
-    &-next,
-    &-prev {
-      height: 14.375rem !important; // 230px
-      width: 7.5rem !important; // 120px
-    }
-
-    & img {
-      @apply block w-full h-full object-cover rounded-[1rem];
-    }
-
-    &__content {
-      @apply absolute left-0 w-full box-border z-[1] overflow-hidden;
-      padding: 0.625rem 0 !important; // 10px
-      bottom: 0rem;
-      border-bottom-left-radius: 1rem;
-      border-bottom-right-radius: 1rem;
-    }
-
-    &__title {
-      @apply font-robotoCondensed mb-[0.625rem] text-[1.25rem] leading-none text-center uppercase font-black; // 20px
-      font-style: normal;
-      color: #ffffff;
-    }
-
-    &__status-text {
-      @apply font-roboto text-[0.75rem] leading-none text-center uppercase font-normal italic mb-0; // 12px
-      color: #ffffff;
-    }
-
-    &__text {
-      @apply font-roboto text-[0.625rem] leading-none text-center uppercase font-black mb-0; // 10px
-      color: rgba(255, 255, 255, 0.7);
-    }
-  }
+.livegames__card {
+  @apply flex justify-center relative w-[120px] h-[230px];
 }
+
+.livegames__card img {
+  @apply block w-full h-full object-cover rounded-[1rem];
+}
+
+.livegames__indicator {
+  @apply absolute w-2 h-2 rounded-full outline outline-4 outline-white z-10;
+  background: linear-gradient(180deg, #70f256 0%, #418c32 100%);
+  box-shadow: 0 0.25rem 0.375rem rgba(42, 255, 0, 0.35);
+  left: calc(100% - 0.625rem);
+  top: 0;
+}
+
+.livegames__content {
+  @apply absolute bottom-0 w-full py-[0.625rem];
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.livegames__title {
+  @apply font-robotoCondensed mb-[0.625rem] text-[1.25rem] leading-none text-center uppercase font-black text-white;
+}
+
+.livegames__status {
+  @apply font-roboto text-[0.75rem] leading-none text-center uppercase font-normal italic text-white mb-0;
+}
+
+.livegames__location {
+  @apply font-roboto text-[0.625rem] leading-none text-center uppercase font-black text-white/70 mb-0;
+}
+
+//#########################OLDIE############################
+// .livegames {
+//   @apply w-full h-full;
+//   overflow: visible !important;
+
+//   .swiper-slide-active {
+//     // transform: translate3d(0.9375rem, 0, 0) !important; // 15px
+//   }
+
+//   .swiper-slide {
+//     @apply text-center text-[1.125rem] flex justify-center items-center rounded-[1rem] !important;
+//     background: #fff;
+
+//     &__indicator {
+//       @apply absolute w-2 h-2 rounded-full outline outline-4 outline-white z-10;
+//       background: linear-gradient(180deg, #70f256 0%, #418c32 100%);
+//       box-shadow: 0 0.25rem 0.375rem rgba(42, 255, 0, 0.35); // 4px 6px
+//       top: -0.3125rem; // -5px
+//       right: 0.9375rem; // 15px
+//     }
+
+//     &-active,
+//     &-next,
+//     &-prev {
+//       height: 14.375rem !important; // 230px
+//       width: 7.5rem !important; // 120px
+//     }
+
+//     & img {
+//       @apply block w-full h-full object-cover rounded-[1rem];
+//     }
+
+//     &__content {
+//       @apply absolute left-0 w-full box-border z-[1] overflow-hidden;
+//       padding: 0.625rem 0 !important; // 10px
+//       bottom: 0rem;
+//       border-bottom-left-radius: 1rem;
+//       border-bottom-right-radius: 1rem;
+//     }
+
+//     &__title {
+//       @apply font-robotoCondensed mb-[0.625rem] text-[1.25rem] leading-none text-center uppercase font-black; // 20px
+//       font-style: normal;
+//       color: #ffffff;
+//     }
+
+//     &__status-text {
+//       @apply font-roboto text-[0.75rem] leading-none text-center uppercase font-normal italic mb-0; // 12px
+//       color: #ffffff;
+//     }
+
+//     &__text {
+//       @apply font-roboto text-[0.625rem] leading-none text-center uppercase font-black mb-0; // 10px
+//       color: rgba(255, 255, 255, 0.7);
+//     }
+//   }
+// }
